@@ -1,0 +1,148 @@
+@font-face {
+    font-family: "Furore";
+    src: url("../fonts/Furore.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+@media screen and (min-width: 1800px){
+    .main-navigation,.hr-section-1-2,.hr-section-5, #section-1>*, #section-2>*,#section-3>*,#section-4>*,#section-5>*,#section-6>*, .footer>*,#privat-policy{
+        zoom: 1;
+    }
+
+}
+@media screen and (min-width: 1600px) and (max-width: 1800px){
+    .main-navigation,.hr-section-1-2,.hr-section-5, #section-1>*, #section-2>*,#section-3>*,#section-4>*,#section-5>*,#section-6>*, .footer>*,#privat-policy{
+        zoom: 0.9;
+    }
+    .hr-section-5 {
+        top: 470vh !important;
+    }
+    .hr-section-1-2 .hr {
+        height: 185vh;
+    }
+    .hr-full {
+        top:  105px !important;
+        right: 110px !important;
+    }
+    .sections-menu {
+        margin-top: -50px;
+    }
+}
+@media screen and (min-width: 1500px) and (max-width: 1600px){
+    .main-navigation,.hr-section-1-2,.hr-section-5, #section-1>*, #section-2>*,#section-3>*,#section-4>*,#section-5>*,#section-6>*, .footer>*,#privat-policy{
+        zoom: 0.85;
+    }
+    .hr-section-5 {
+        top: 506vh !important;
+    }
+    .hr-section-1-2 .hr {
+        height: 200vh;
+    }
+    .hr-full {
+        top:  95px !important;
+        right: 105px !important;
+    }
+    .sections-menu {
+        margin-top: -50px;
+    }
+}
+@media screen and (min-width: 1400px) and (max-width: 1500px){
+    .main-navigation,.hr-section-1-2,.hr-section-5, #section-1>*, #section-2>*,#section-3>*,#section-4>*,#section-5>*,#section-6>*, .footer>*,#privat-policy{
+        zoom: 0.8;
+    }
+    .hr-section-5 {
+        top: 535vh !important;
+    }
+    .hr-section-1-2 .hr {
+        height: 210vh;
+    }
+    .hr-full {
+        top:  90px !important;
+        right: 100px !important;
+    }
+    .sections-menu {
+        margin-top: -50px;
+    }
+}
+@media screen and (min-width: 1300px) and (max-width: 1400px){
+    .main-navigation,.hr-section-1-2,.hr-section-5, #section-1>*, #section-2>*,#section-3>*,#section-4>*,#section-5>*,#section-6>*, .footer>*,#privat-policy{
+        zoom: 0.75;
+    }
+    .hr-section-5 {
+        top: 575vh !important;
+    }
+    .hr-section-1-2 .hr {
+        height: 225vh;
+    }
+    .hr-full {
+        top:  85px !important;
+        right: 95px !important;
+    }
+    .sections-menu {
+        margin-top: -50px;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1300px){
+    .main-navigation,.hr-section-1-2,.hr-section-5, #section-1>*, #section-2>*,#section-3>*,#section-4>*,#section-5>*,#section-6>*, .footer>*,#privat-policy{
+        zoom: 0.7;
+    }
+    .hr-section-5 {
+        top: 605vh !important;
+    }
+    .hr-section-1-2 .hr {
+        height: 235vh;
+    }
+    .hr-full {
+        top:  80px !important;
+        right: 90px !important;
+    }
+    .sections-menu {
+        margin-top: -50px;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px){
+    body {
+        zoom: 1.7;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 700px){
+    body {
+        zoom: 1.9;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px){
+    body {
+        zoom: 1.5;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 900px){
+    body {
+        zoom: 2.5;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1100px){
+    body {
+        zoom: 2.8;
+    }
+}
+.carousel-3d-controls {
+    width: 95% !important;
+    left: 30px !important;
+}

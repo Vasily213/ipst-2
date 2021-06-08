@@ -1,0 +1,21 @@
+#section-6{
+    margin-top: -5px;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-image: url("../img/background/section-3-4-6.png");
+    padding-top: 100px;
+}
+
+.section-6-p-1 {
+    font-family: Furore;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 46px;
+    line-height: 53px;
+    color: #FFFFFF;
+}
+
+.computer-4 {
+    margin: 190px 0 0 0;
+}

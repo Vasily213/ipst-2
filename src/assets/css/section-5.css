@@ -1,0 +1,50 @@
+#section-5 {
+    margin-top: -4px;
+    height: 100vh;
+    width: 100vw;
+    background-size: 100% 100%;
+    background-image: url("../img/background/section-5.png");
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.hr-3 {
+    background: #fff;
+    width: 3px;
+    height: 600px;
+    margin: 0px 0 0 0;
+}
+
+.section-5-p-1 {
+    font-family: Furore;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 55px;
+    color: #FFFFFF;
+    opacity: 0.99;
+}
+
+.section-5-1{
+    margin-left: 0px;
+}
+
+.slider {
+    margin: 45px 0 0 -150px;
+}
+
+
+.section-5-p-2 {
+    margin: 20px 0 0 -150px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}

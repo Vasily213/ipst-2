@@ -1,0 +1,153 @@
+#section-1 {
+    height: 100vh;
+    width: 100vw;
+    background-size: 100% 100%;
+    background-image: url("../img/background/section-1.png");
+}
+.section-1 {
+    margin: 70px 0 0 0;
+}
+
+.name {
+    font-family: Furore, sans-serif;
+    color: #fff;
+    font-size: 64px;
+    margin: 30px 0 -20px 0;
+}
+
+.hr {
+    background: #fff;
+    width: 3px;
+    height: 165vh;
+    margin: 30px 0 0 0;
+}
+
+.hr-2 {
+    /*margin-top: -150px;*/
+    width: 3px;
+    height: 570vh;
+    background: #fff;
+}
+
+.col-p-1 {
+    font-family: Furore, sans-serif;
+    color: #fff;
+    font-size: 60px;
+    line-height: 1;
+}
+
+.list {
+    display: inline-block;
+    background: #fff;
+    width: 3px;
+    height: 315px;
+    margin-left: 10px;
+}
+
+.circle {
+    position: relative;
+    top: -330px
+}
+
+.circle-item {
+    margin-top: 60px;
+}
+
+.col-p-2 {
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
+
+    color: #FFFFFF;
+    margin-top: 50px;
+}
+
+.select-1-btn {
+    z-index: 1;
+    position: relative;
+    top: 350px;
+    width: 270px;
+    height: 80px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    background: #FFFFFF;
+    box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+    transition: .1s;
+}
+
+.select-1-btn:hover {
+    border: none;
+    background: rgba(88, 160, 163, 0.53);
+    box-shadow: inset 7px 8px 17px rgba(84, 84, 84, 0.37);
+    border-radius: 5px;
+}
+.select-1-btn:active {
+    border: none;
+    background: rgba(88, 160, 163, 0.76);
+    box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.computer {
+    margin: -170px 0 0 0;
+}
+
+.select-row-2 {
+    z-index: 0;
+    margin-top: -80px;
+}
+
+.header {
+     padding: 50px 0 0 4.5rem;
+ }
+
+.footer{
+    margin-top: -8vh;
+    background-size: 100% 100%;
+    background-image: url("../img/background/section-3-4-6.png");
+}
+
+.footer-p-1 {
+    margin-top: 20px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.footer-p-2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.footer-p-3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.slider-navigation:hover {
+    zoom: 110%;
+}
