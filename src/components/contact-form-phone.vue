@@ -219,6 +219,9 @@ export default {
             return name;
         },
         changeInput(text) {
+            if (text === 'name') {
+                this.form[text] = this.form[text].replace(/[\d]+/ , '')
+            }
             this.form[text] = this.form[text].replace(/\s{2,}/g, ' ');
         },
         onPickFile() {
@@ -237,14 +240,13 @@ export default {
                         formData.append(i,this.form[i])
                     }
                 }
-                await fetch('http://' + config.baseUrlApi + '/send/create', {
+                await fetch(config.baseUrlApi + '/api/send', {
                     method: 'POST',
                     body: formData,
                 })
                     .then(response => response.json())
                     .then((res) => {
-                        console.log(res)
-                        if (res.success) {
+                        if (res.status) {
                             this.success.bool = true;
                             this.success.step = 2;
                         }

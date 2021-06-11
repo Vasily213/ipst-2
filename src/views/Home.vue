@@ -369,7 +369,7 @@ export default {
                  this.success.bool = false;
              }
             if (e.target.innerText === 'SUBMIT'){
-                this.success.bool = true
+                this.success.bool = e.bool
             }
         },
         screen(obj) {

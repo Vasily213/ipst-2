@@ -137,7 +137,7 @@ export default {
         rules: {
             name: [
                 value => !!value || 'Enter your name.',
-                value => value.length <= 100 || 'This field should contain 1-100 symbols.',
+                value => value.length <= 100 || 'This field should contain 1-100 symbols.'
             ],
             company: [
                 value => value.length <= 50 || 'This field should contain 0-50 symbols.',
@@ -159,7 +159,6 @@ export default {
             comment: [
                 value => value.length <= 500 || 'This field should contain 1-100 symbols.',
             ]
-
         },
         valid: true,
         form: {
@@ -207,6 +206,9 @@ export default {
             return name;
         },
         changeInput(text) {
+            if (text === 'name') {
+                this.form[text] = this.form[text].replace(/[\d]+/ , '')
+            }
             this.form[text] = this.form[text].replace(/\s{2,}/g, ' ');
         },
         onPickFile() {
@@ -214,30 +216,27 @@ export default {
         },
         async send() {
             let formData = new FormData();
-            this.$emit('screen',{bool: true,step: 2})
-            // if (this.$refs.form.validate()) {
-            //     for (let i in this.form) {
-            //         if (i === 'file'){
-            //             for(let j = 0; j<this.form.file.length; j++ ){
-            //                 formData.append('files[]', this.form.file[j]);
-            //             }
-            //         } else{
-            //             formData.append(i,this.form[i])
-            //         }
-            //     }
-            //     await fetch('http://' + config.baseUrlApi + '/send/create', {
-            //         method: 'POST',
-            //         body: formData,
-            //     })
-            //         .then(response => response.json())
-            //         .then((res) => {
-            //             console.log(res)
-            //             if (res.success) {
-            //                 this.success.bool = true;
-            //                 this.success.step = 2;
-            //             }
-            //         })
-            // }
+            if (this.$refs.form.validate()) {
+                for (let i in this.form) {
+                    if (i === 'file') {
+                        for (let j = 0; j < this.form.file.length; j++) {
+                            formData.append('file[]', this.form.file[j]);
+                        }
+                    } else {
+                        formData.append(i, this.form[i])
+                    }
+                }
+                await fetch(config.baseUrlApi + '/api/send', {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then(response => response.json())
+                    .then((res) => {
+                        if (res.status) {
+                            this.$emit('screen', {bool: true, step: 2})
+                        }
+                    })
+            }
         },
         uploadFile() {
             this.fileError.error.maxFile = false;

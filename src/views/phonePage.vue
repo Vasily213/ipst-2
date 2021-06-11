@@ -73,8 +73,8 @@
                     <button
                         class="section-1-btn"
                         @click="nav=false"
-                        v-bind:class="{active: activeSection == 4}"
-                        v-on:click="scrollToSection(4)"
+                        v-bind:class="{active: activeSection == 3}"
+                        v-on:click="scrollToSection(3)"
                     >CONTACT US</button>
                 </div>
             </div>
@@ -240,14 +240,14 @@
                     <img src="../assets/img/phone/computer-4.png" alt="">
                 </div>
             </div>
-            <div class="section-4">
+            <section class="section-4">
                 <p class="section-4-text">OUR TEAM</p>
                 <slider-phone></slider-phone>
                 <p class="section-4-p">
                     We dream to be proud <br> of the positive changes <br>
                     that we will implement <br> to your business.
                 </p>
-            </div>
+            </section>
         </section>
         <section id="section-5">
             <div class="section-5">
@@ -420,9 +420,8 @@ header {
     align-content: center;
     position: absolute;
     top: 0;
-    margin: 0 auto;
     background: #202020;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
@@ -466,8 +465,8 @@ header {
 }
 
 #section-3 {
-    background-image: url("../assets/img/phone/section-3-4.png");
-    background-size: 100vw 100%;
+    /*background-image: url("../assets/img/phone/section-3-4.png");*/
+    /*background-size: 100vw 100%;*/
     margin-top: -50px;
 }
 
@@ -657,6 +656,8 @@ header {
 .section-3 {
     margin-top: -1px;
     padding-top: 30px;
+    background: url("../assets/img/phone/section-3.png") no-repeat;
+    background-size: 100vw 100%;
 }
 
 .section-3-text {
@@ -717,6 +718,8 @@ header {
 .section-4 {
     margin-top: -3px;
     padding-top: 20px;
+    background: url("../assets/img/phone/section-4.png") no-repeat;
+    background-size: 100vw 100%;
 }
 
 .section-4-text {
