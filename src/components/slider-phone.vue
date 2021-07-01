@@ -1,19 +1,29 @@
 <template>
-    <div class="slider">
-        <carousel-3d :width="780" :height="520">
-            <slide  :index="0">
+    <div class="slider-phone">
+        <carousel-3d :height="170">
+            <slide :index="0">
                 <img class="slider-image-1"
-                     src="../assets/img/image-3.png"
+                     src="../assets/img/phone/phone-slider-5.jpg"
                      alt="">
             </slide>
             <slide :index="1">
                 <img class="slider-image-1"
-                     src="../assets/img/image-3.png"
+                     src="../assets/img/phone/phone-slide-1.jpg"
                      alt="">
             </slide>
             <slide :index="2">
                 <img class="slider-image-1"
-                     src="../assets/img/image-3.png"
+                     src="../assets/img/phone/phone-slide-2.jpg"
+                     alt="">
+            </slide>
+            <slide :index="3">
+                <img class="slider-image-1"
+                     src="../assets/img/phone/phone-slide-3.jpg"
+                     alt="">
+            </slide>
+            <slide :index="4">
+                <img class="slider-image-1"
+                     src="../assets/img/phone/phone-slide-4.jpg"
                      alt="">
             </slide>
         </carousel-3d>
@@ -21,9 +31,10 @@
 </template>
 
 <script>
-import { Carousel3d, Slide } from 'vue-carousel-3d';
+import {Carousel3d, Slide} from 'vue-carousel-3d';
+
 export default {
-name: "slider-phone",
+    name: "slider-phone",
     components: {
         Carousel3d,
         Slide
@@ -32,5 +43,7 @@ name: "slider-phone",
 </script>
 
 <style scoped>
-
+.slider-phone {
+    width: 100%;
+}
 </style>

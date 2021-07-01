@@ -8,9 +8,14 @@ const routes = [
         path: '/',
         name: 'Home',
         component: () => {
-            if (window.innerWidth<1200){
-                return import( '../views/phonePage')
-            } return import( '../views/Home.vue')
+            // window.addEventListener('resize',(e)=>{
+            //     console.log(1)
+            //     if (e.target.screen.availWidth < 1200) {
+            //         return import( '../views/phonePage')
+            //     }
+            //     return import( '../views/Home.vue')
+            // })
+            return import( '../views/start.vue')
         }
     },
     {

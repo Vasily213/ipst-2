@@ -1,13 +1,59 @@
 <template>
     <div id="app-phone">
         <transition name="prompt">
-            <div class="navigation" v-if="nav">
+            <div @click="nav=false" class="navigation" v-if="nav">
                 <div class="navigation-box">
                     <div class="navigation-item"
                          @click="nav=false"
                          v-bind:class="{active: activeSection == 0}"
                          v-on:click="scrollToSection(0)">
-                        <img width="100" height="50" src="../assets/img/logo_header.png" alt="">
+                        <div>
+                            <svg class="svg-logo" width="50" height="50" viewBox="0 0 122 127" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M25.3431 74.8284L12.5149 22.5434L68.0335 21.4617L25.3431 74.8284Z"
+                                    fill="#BFBFBF"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                                <path
+                                    d="M92.2178 86.3669L115 40.9331L102.172 101.367L92.2178 86.3669Z"
+                                    fill="#BFBFBF"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                                <path d="M2 83.6993L25.3431 74.8289L48.6861 123.075L2 83.6993Z"
+                                      fill="#89BF6B" stroke="white"
+                                      stroke-width="2" stroke-miterlimit="10"/>
+                                <path
+                                    d="M12.5149 22.544L66.9119 3.00024L68.0335 21.4622L12.5149 22.544Z"
+                                    fill="#89BF6B"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                                <path
+                                    d="M25.3431 74.8284L68.0335 21.4617L92.2178 86.3672L25.3431 74.8284Z"
+                                    fill="#325058"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                                <path
+                                    d="M66.9119 3.00024L68.0335 21.4622L115 40.9339L66.9119 3.00024Z"
+                                    fill="#325058"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                                <path
+                                    d="M12.5149 22.5442L25.3431 74.8292L2 83.6996L12.5149 22.5442Z"
+                                    fill="#58A0A3"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                                <path
+                                    d="M92.2877 85.9342L114.72 41.0773L68.3839 21.822L92.2877 85.9342Z"
+                                    fill="#58A0A3"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                                <path
+                                    d="M25.3431 74.8289L48.6861 123.075L92.2178 86.3676L25.3431 74.8289Z"
+                                    fill="#58A0A3"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                                <path
+                                    d="M48.6862 123.075L92.2178 86.3677L102.172 101.368L48.6862 123.075Z"
+                                    fill="#89BF6B"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                            </svg>
+                        </div>
+                        <div class="logo-2-img">
+                            <img height="30" width="100" alt="33" src="../assets/img/ipst-1.png">
+                        </div>
                     </div>
                     <div class="navigation-item"
                          @click="nav=false"
@@ -40,9 +86,9 @@
                 </div>
             </div>
         </transition>
-        <section id="section-1">
-            <header>
-                <div style="display: flex;justify-content: space-around;">
+        <section id="phone-section-1">
+            <header class="header-phone">
+                <div style="display: flex;justify-content: space-between;padding: 0 40px;">
                     <div class="">
                         <img width="100" height="50" src="../assets/img/logo_header.png" alt="">
                     </div>
@@ -53,34 +99,35 @@
                     </div>
                 </div>
             </header>
-            <div class="section-1">
+            <div class="section-1-phone">
                 <p class="section-p-header">WE ARE <br> THE CREATORS of</p>
                 <div class="section-1-list">
-                <span class="section-1-list-item">
-                    IT solutions
-                </span>
-                    <div class="dash"></div>
                     <span class="section-1-list-item">
-                    your unique technology
-                </span>
-                    <div class="dash"></div>
-                    <span class="section-1-list-item">
-                    positive changes in your business <br> and your life
-                </span>
+                        IT solutions
+                    </span>
+                        <div class="dash"></div>
+                        <span class="section-1-list-item">
+                        your unique technology
+                    </span>
+                        <div class="dash"></div>
+                        <span class="section-1-list-item">
+                        positive changes in your business <br> and your life
+                    </span>
                 </div>
                 <img class="computer-1" src="../assets/img/phone/computer-1.png" alt="">
-                <div>
+                <div style="margin-top: 5vh">
                     <button
                         class="section-1-btn"
                         @click="nav=false"
-                        v-bind:class="{active: activeSection == 3}"
-                        v-on:click="scrollToSection(3)"
-                    >CONTACT US</button>
+                        v-bind:class="{active: activeSection == 4}"
+                        v-on:click="scrollToSection(4)"
+                    >CONTACT US
+                    </button>
                 </div>
             </div>
         </section>
-        <section id="section-2">
-            <div class="section-2">
+        <section id="phone-section-2">
+            <div class="section-2-phone">
                 <div class="logo-2">
                     <div>
                         <svg class="svg-logo" width="50" height="50" viewBox="0 0 122 127" fill="none"
@@ -137,7 +184,7 @@
                         </div>
 
                         <div class="vector">
-                            <img alt="" src="../assets/img/phone/vector.png">
+                            <img height="450" alt="" src="../assets/img/phone/vector.png">
                         </div>
                     </div>
 
@@ -151,20 +198,22 @@
                             <br> projects that capable of <br> cross-platforming.
                         </p>
                         <p class="text-vector-p">
-                            We have our own development <br> hub in Tomsk, Russia. Tomsk is
-                            <br> the student’s capital of Russia, <br> because there are the largest
-                            <br> number of universities and <br> educational institutions per <br> capita.
+                            We create Web and Mobile <br> app solutions with
+                            broad <br> functionality and complex <br> integrations.
+                            Using the latest <br> technologies, we develop <br>
+                            products that will help <br> you find innovative,
+                            transforming <br> solutions for your business
                         </p>
 
                     </div>
                     <div style="display: flex; justify-content: center;">
-                        <img src="../assets/img/phone/computer-2.png" alt="">
+                        <img height="150" src="../assets/img/phone/computer-2.png" alt="">
                     </div>
                 </div>
             </div>
         </section>
-        <section id="section-3">
-            <div class="section-3">
+        <section id="phone-section-3">
+            <div class="phone-section-3">
                 <p class="about-p">
                     You can come to us with a <br> project frozen at any stage or
                     <br>just with an idea, and we will <br> bring all your wishes to life.
@@ -204,8 +253,8 @@
                         <p class="participants-p">Support and<br> maintenance</p>
                     </div>
                 </div>
-                <div style="display: flex; justify-content: center; margin-top: 30px">
-                    <img src="../assets/img/phone/computer-3.png" alt="">
+                <div style="display: flex; justify-content: center; margin: 40px 0 50px 0">
+                    <img height="150" src="../assets/img/phone/computer-3.png" alt="">
                 </div>
                 <div class="section-3-text">
                     <div style="margin: 0 -6rem 0 -3.2rem;">
@@ -237,10 +286,10 @@
                     </div>
                 </div>
                 <div style="display: flex; justify-content: center;">
-                    <img src="../assets/img/phone/computer-4.png" alt="">
+                    <img width="100" src="../assets/img/phone/computer-4.png" alt="">
                 </div>
             </div>
-            <section class="section-4">
+            <section class="phone-section-4">
                 <p class="section-4-text">OUR TEAM</p>
                 <slider-phone></slider-phone>
                 <p class="section-4-p">
@@ -249,8 +298,8 @@
                 </p>
             </section>
         </section>
-        <section id="section-5">
-            <div class="section-5">
+        <section id="phone-section-5">
+            <div class="section-5-phone">
                 <div class="form-text">
                     <p class="form-text-p">TELL US ABOUT YOUR<br> PROJECT</p>
                     <div style="display: flex;justify-content: center;">
@@ -259,7 +308,7 @@
                     <contact-form-phone></contact-form-phone>
                 </div>
             </div>
-            <div class="section-6">
+            <div class="section-6-phone">
                 <div>
                     <p class="section-6-p-1">
                         Flat 26, 38 Chapman Street North <br> Melbourne VIC 3051
@@ -399,7 +448,6 @@ export default {
 </script>
 
 <style scoped>
-
 header {
     padding-top: 20px;
 }
@@ -435,6 +483,11 @@ header {
     box-shadow: 0 0 40px #494949;
 }
 
+.navigation-item:nth-child(1) {
+    display: flex;
+    justify-content: center;
+}
+
 .navigation-item {
     padding: 11px 0;
     font-family: Furore;
@@ -454,32 +507,33 @@ header {
     color: #58A0A3;
 }
 
-#section-1 {
+#phone-section-1 {
     background: url("../assets/img/phone/section-1.png") no-repeat;
     background-size: 100vw 100%;
 }
 
-#section-2 {
+#phone-section-2 {
     background-image: url("../assets/img/phone/section-2.png");
     background-size: 100vw 100%;
 }
 
-#section-3 {
-    /*background-image: url("../assets/img/phone/section-3-4.png");*/
-    /*background-size: 100vw 100%;*/
-    margin-top: -50px;
+#phone-section-3 {
+    background-image: url("../assets/img/phone/section-3-4.png");
+    background-size: 100vw 100%;
+    /*margin-top: -50px;*/
 }
 
-#section-4 {
+#phone-section-4 {
     background-image: url("../assets/img/phone/section-4.png");
     background-size: 100vw 100%;
     padding-bottom: 30px;
 }
 
-#section-5 {
+#phone-section-5 {
+    z-index: -999;
+    margin-top: -20px;
     background-image: url("../assets/img/phone/section-5.png");
     background-size: 100vw 100%;
-    margin-top: -1px;
 }
 
 /*------------- section 1 ---------------------*/
@@ -502,12 +556,13 @@ header {
     margin-top: 3px;
 }
 
-.section-1 {
-    padding: 75px 0;
+.section-1-phone {
+    padding: 0 0 50px 0;
     text-align: center;
 }
 
 .section-p-header {
+    margin-top: 5vh;
     font-family: Furore;
     font-style: normal;
     font-weight: normal;
@@ -518,7 +573,7 @@ header {
 }
 
 .section-1-list {
-    margin-top: 50px;
+    margin-top: 5vh;
 }
 
 .section-1-list-item {
@@ -539,10 +594,12 @@ header {
 }
 
 .computer-1 {
-    margin-top: 50px;
+    height: 250px;
+    margin-top: 5vh;
 }
 
 .section-1-btn {
+    /*margin-top: 5vh;*/
     padding: 9px 28px;
     font-family: Montserrat;
     font-style: normal;
@@ -558,7 +615,7 @@ header {
 /*------------- ---------------------- ---------------------*/
 
 /*------------- section 2 ---------------------*/
-.section-2 {
+.section-2-phone {
     margin-top: -1px;
     padding: 30px 0;
 }
@@ -582,7 +639,7 @@ header {
     color: rgba(255, 255, 255, 0.62);
     transform: rotate(-90deg);
     display: flex;
-    margin: 180px 0 0 0;
+    margin: 220px 0 0 0;
     width: 120px;
 }
 
@@ -594,8 +651,12 @@ header {
     margin-top: 0;
 }
 
+.text-vector-p:nth-child(2) {
+    margin-top: 85px;
+}
+
 .text-vector-p {
-    margin-top: 55px;
+    margin-top: 65px;
     text-align: center;
     font-family: Montserrat;
     font-style: normal;
@@ -607,7 +668,7 @@ header {
 
 .text-vector {
     position: relative;
-    top: -360px;
+    top: -425px;
     margin-bottom: -340px;
 }
 
@@ -620,7 +681,7 @@ header {
     text-align: center;
     letter-spacing: 0.02em;
     color: #FFFFFF;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
 
 .wand {
@@ -653,11 +714,11 @@ header {
 /*------------- ---------------------- ---------------------*/
 
 /*------------- section 3 ---------------------*/
-.section-3 {
+.phone-section-3 {
     margin-top: -1px;
-    padding-top: 30px;
-    background: url("../assets/img/phone/section-3.png") no-repeat;
-    background-size: 100vw 100%;
+    padding-top: 10px;
+    /*background: url("../assets/img/phone/section-3.png") no-repeat;*/
+    /*background-size: 100vw 100%;*/
 }
 
 .section-3-text {
@@ -675,13 +736,13 @@ header {
     color: rgba(255, 255, 255, 0.62);
     transform: rotate(-90deg);
     display: flex;
-    margin: 220px 0 0 0;
+    margin: 200px 0 0 0;
     width: 160px;
     /*height: 100px;*/
 }
 
 .description {
-    margin: 0 auto;
+    margin: -20px auto 0 auto;
 }
 
 .description-p:nth-child(1) {
@@ -715,12 +776,30 @@ header {
 /*------------- ---------------------- ---------------------*/
 
 /*------------- section 4 ---------------------*/
-.section-4 {
+.phone-section-4 {
     margin-top: -3px;
     padding-top: 20px;
-    background: url("../assets/img/phone/section-4.png") no-repeat;
-    background-size: 100vw 100%;
+    padding-bottom: 70px;
+    /*z-index: 1;*/
+    background-position-x: -10px;
+    /*background: url("../assets/img/phone/section-4.png") no-repeat;*/
+    /*background-size: 100vw 100%;*/
 }
+
+
+/*.phone-section-4::before {*/
+/*    content: "";*/
+/*    width: 120%;*/
+/*    height: 11.8%;*/
+/*    margin-top: -20px;*/
+/*    position: absolute;*/
+/*    !*top: -50%;*!*/
+/*    !*left: -50%;*!*/
+/*    transform: rotate(-1deg);*/
+/*    background: url("../assets/img/phone/section-4.png") 0 0 no-repeat;*/
+/*    background-size: 100vw 100%;*/
+/*    background-position-x: -2px;*/
+/*}*/
 
 .section-4-text {
     font-family: Furore;
@@ -748,8 +827,8 @@ header {
 /*------------- ---------------------- ---------------------*/
 
 /*------------- section 5 ---------------------*/
-.section-5 {
-    padding-top: 40px;
+.section-5-phone {
+
 }
 
 .form-text-p {
@@ -772,10 +851,11 @@ header {
 /*------------- ---------------------- ---------------------*/
 
 /*------------- section 6 ---------------------*/
-.section-6 {
+.section-6-phone {
     margin-top: 60px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 20px;
 }
 
 .section-6-p-1 {

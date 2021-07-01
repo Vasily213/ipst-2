@@ -206,9 +206,6 @@ export default {
             return name;
         },
         changeInput(text) {
-            if (text === 'name') {
-                this.form[text] = this.form[text].replace(/[\d]+/ , '')
-            }
             this.form[text] = this.form[text].replace(/\s{2,}/g, ' ');
         },
         onPickFile() {
@@ -232,9 +229,10 @@ export default {
                 })
                     .then(response => response.json())
                     .then((res) => {
-                        if (res.status) {
-                            this.$emit('screen', {bool: true, step: 2})
-                        }
+                        // if (res.status) {
+                        //     this.$emit('screen', {bool: true, step: 2})
+                        // }
+                        console.log(res)
                     })
             }
         },
@@ -254,6 +252,15 @@ export default {
                     return;
                 }
             }
+
+            for (let i = 0; i < this.$refs.file.files.length; i++) {
+                if (this.$refs.file.files[i].size/1024/1024 > 5){
+                    this.fileError.message = 'The size of attachments should not exceed 5 MB.';
+                    this.fileError.error.repeat = true;
+                    return;
+                }
+            }
+
 
             let str = '/';
             let name = '';

@@ -7,7 +7,7 @@
                 <a href="/#page2" class="menu-point"><span>about us</span></a>
                 <a href="/#page4" class="menu-point"><span>mission</span></a>
                 <a href="/#page5" class="menu-point"><span>team</span></a>
-                <a href="/#page6" class="menu-point"><span >contact us</span></a>
+                <a href="/#page6" class="menu-point"><span>contact us</span></a>
             </div>
             <div class="hr-hide"></div>
         </div>
@@ -78,8 +78,7 @@
                                                                     <p class="col-p-2">IT solutions</p>
                                                                     <p class="col-p-2">your unique technology</p>
                                                                     <p class="col-p-2">positive changes in your business
-                                                                        <br> and your
-                                                                        life
+                                                                        <br> and your life
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -250,11 +249,8 @@
                                             <p class="section-5-p-1">OUR TEAM</p>
                                             <slider class="slider"></slider>
 
-                                            <p class="section-5-p-2">We dream to be proud of the positive changes that
-                                                we
-                                                will
-                                                <br>
-                                                implement to your business.</p>
+                                            <p class="section-5-p-2">We dream to be proud of the positive changes that we will
+                                                <br>implement to your business.</p>
                                         </div>
                                     </div>
                                     <div class="col-1"></div>
@@ -353,8 +349,6 @@ export default {
     data: function () {
         return {
             options: {
-                // afterLoad: this.afterLoad,
-                // navigation: true,
                 anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
             },
             success: {
@@ -365,10 +359,10 @@ export default {
     },
     methods: {
         clickWindow(e) {
-             if (this.success.bool) {
-                 this.success.bool = false;
-             }
-            if (e.target.innerText === 'SUBMIT'){
+            if (this.success.bool) {
+                this.success.bool = false;
+            }
+            if (e.target.innerText === 'SUBMIT') {
                 this.success.bool = e.bool
             }
         },
@@ -377,127 +371,34 @@ export default {
         },
         addSection: function (e) {
             var newSectionNumber = document.querySelectorAll('.fp-section').length + 1
-
-            // creating the section div
             var section = document.createElement('div')
             section.className = 'section'
             section.innerHTML = `<h3>Section ${newSectionNumber}</h3>`
-
-            // adding section
             document.querySelector('#fullpage').appendChild(section)
-
-            // creating the section menu element
             var sectionMenuItem = document.createElement('li')
             sectionMenuItem.setAttribute('data-menuanchor', 'page' + newSectionNumber)
             sectionMenuItem.innerHTML = `<a href="#page${newSectionNumber}">Section${newSectionNumber}</a>`
-
-            // adding anchor for the section
             this.options.anchors.push(`page${newSectionNumber}`)
-
-            // we have to call `update` manually as DOM changes won't fire updates
-            // requires the use of the attribute ref="fullpage" on the
-            // component element, in this case, <full-page>
-            // ideally, use an ID element for that element too
             this.$refs.fullpage.build()
         },
-
         removeSection: function () {
             var sections = document.querySelector('#fullpage').querySelectorAll('.fp-section')
             var lastSection = sections[sections.length - 1]
-
-            // removing the last section
             lastSection.parentNode.removeChild(lastSection)
-
-            // removing the last anchor
             this.options.anchors.pop()
-
-            // removing the last item on the sections menu
             var sectionsMenuItems = document.querySelectorAll('#menu li')
             var lastItem = sectionsMenuItems[sectionsMenuItems.length - 1]
             lastItem.parentNode.removeChild(lastItem)
         },
         scrollToSection(id, force = false) {
             if (this.inMove && !force) return false;
-
             this.activeSection = id;
             this.inMove = true;
-
             document.getElementsByTagName('section')[id].scrollIntoView({behavior: 'smooth'});
-
             setTimeout(() => {
                 this.inMove = false;
             }, 400);
         },
-        // calculateSectionOffsets() {
-        //     let sections = document.getElementsByTagName('section');
-        //     let length = sections.length;
-        //
-        //     for (let i = 0; i < length; i++) {
-        //         let sectionOffset = sections[i].offsetTop;
-        //         this.offsets.push(sectionOffset);
-        //     }
-        // },
-        // handleMouseWheel: function (e) {
-        //     if (e.wheelDelta < 30 && !this.inMove) {
-        //         this.moveUp();
-        //     } else if (e.wheelDelta > 30 && !this.inMove) {
-        //         this.moveDown();
-        //     }
-        //
-        //     e.preventDefault();
-        //     return false;
-        // },
-        // handleMouseWheelDOM: function (e) {
-        //
-        //     if (e.detail > 0 && !this.inMove) {
-        //         this.moveUp();
-        //     } else if (e.detail < 0 && !this.inMove) {
-        //         this.moveDown();
-        //     }
-        //
-        //     return false;
-        // },
-        // moveDown() {
-        //     if (this.activeSection === 0) {
-        //         return;
-        //     }
-        //     this.inMove = true;
-        //     this.activeSection--;
-        //
-        //     if (this.activeSection < 0) this.activeSection = this.offsets.length - 1;
-        //
-        //     this.scrollToSection(this.activeSection, true);
-        // },
-        // moveUp() {
-        //     if (this.activeSection === 5) {
-        //         return;
-        //     }
-        //     this.inMove = true;
-        //     this.activeSection++;
-        //
-        //     if (this.activeSection > this.offsets.length - 1) this.activeSection = 0;
-        //     this.scrollToSection(this.activeSection, true);
-        // },
-        // touchStart(e) {
-        //     e.preventDefault();
-        //
-        //     this.touchStartY = e.touches[0].clientY;
-        // },
-        // touchMove(e) {
-        //     if (this.inMove) return false;
-        //     e.preventDefault();
-        //
-        //     const currentY = e.touches[0].clientY;
-        //
-        //     if (this.touchStartY < currentY) {
-        //         this.moveDown();
-        //     } else {
-        //         this.moveUp();
-        //     }
-        //
-        //     this.touchStartY = 0;
-        //     return false;
-        // },
     }
 }
 </script>
@@ -549,7 +450,7 @@ export default {
 
 .hr-full {
     position: absolute;
-    top: 150px;
+    /*top: 150px;*/
     right: 130px;
     z-index: 1;
 }
@@ -573,7 +474,7 @@ a {
 .main-navigation {
     position: absolute;
     right: 8.3rem;
-    top: 15rem;
+    top: 30vh;
     z-index: 1;
 }
 

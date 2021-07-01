@@ -90,7 +90,7 @@
                                         close
                                         label
                                         color="#fff"
-                                        style="font-family: Montserrat; height: 36px; background: #fff; border-radius: 5px; margin-top: 10px; justify-content: space-around !important;"
+                                        style="font-family: Montserrat; display: flex; height: 36px; background: #fff; border-radius: 5px; margin-top: 10px; justify-content: space-around !important;"
                                         @click:close="unsetFile(ind)"
                                     >
                                         {{ fileName(item.name) }}
@@ -123,12 +123,6 @@
                 <div>
                     <button class="btn" type="button" @click="send"><b>SUBMIT</b></button>
                 </div>
-<!--                <div class="col">-->
-<!--                    <span class="privat-policy-span">-->
-<!--                        Sending your data you agree to our terms <br>and conditions:-->
-<!--                        <a href="#/private-policy" target="_blank" class="privat-policy-a">Our Privacy Policy</a>-->
-<!--                    </span>-->
-<!--                </div>-->
             </div>
         </v-form>
 
@@ -219,17 +213,16 @@ export default {
             return name;
         },
         changeInput(text) {
-            if (text === 'name') {
-                this.form[text] = this.form[text].replace(/[\d]+/ , '')
-            }
             this.form[text] = this.form[text].replace(/\s{2,}/g, ' ');
         },
         onPickFile() {
             this.$refs.file.click()
+            this.fileError.error.maxFile = false;
+            this.fileError.error.expansion = false;
+            this.fileError.error.repeat = false;
         },
         async send() {
             let formData = new FormData();
-
             if (this.$refs.form.validate()) {
                 for (let i in this.form) {
                     if (i === 'file'){
@@ -254,9 +247,7 @@ export default {
             }
         },
         uploadFile() {
-            this.fileError.error.maxFile = false;
-            this.fileError.error.expansion = false;
-            this.fileError.error.repeat = false;
+            console.log('upload')
             if (this.form.file.length + this.$refs.file.files.length > 3) {
                 this.fileError.error.maxFile = true;
                 this.fileError.message = 'The number of attachments should not exceed three.'
@@ -265,6 +256,13 @@ export default {
             for (let i = 0; i < this.$refs.file.files.length; i++) {
                 if (this.form.file.find(item => item.name === this.$refs.file.files[i].name)) {
                     this.fileError.message = 'You have uploaded a duplicate file.';
+                    this.fileError.error.repeat = true;
+                    return;
+                }
+            }
+            for (let i = 0; i < this.$refs.file.files.length; i++) {
+                if (this.$refs.file.files[i].size/1024/1024 > 5){
+                    this.fileError.message = 'The size of attachments should not exceed 5 MB.';
                     this.fileError.error.repeat = true;
                     return;
                 }
@@ -343,10 +341,13 @@ export default {
     font-family: Helvetica, Arial, sans-serif;
 }
 .fileLoad {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 .v-chip-item{
     width: 220px;
+    display: block;
 }
 .file-error {
     width: 220px;
@@ -402,6 +403,12 @@ export default {
     color: #000000;
     padding: 9px 45px;
     margin-top: 30px;
+}
+
+.btn:active {
+    background: #58A0A3;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
 }
 
 
